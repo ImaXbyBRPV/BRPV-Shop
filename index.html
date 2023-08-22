@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRPV | Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shopping.css">
+</head>
+<body>
+    <div class="ban">
+        <div class="navbar">
+            <img class="small-logo" src="https://media.discordapp.net/attachments/1122238473018036274/1133376150798868590/Borderrpppp.png?width=460&height=457">
+            <a href="https://imaxbybrpv.github.io/BRPV-I-Main-Page/">Main</a>
+            <a href="http://127.0.0.1:5500/promoCodes.html">Promo Codes</a>
+            <a href="#">Shop</a>
+            <a href="#">Gallery</a>
+            <p class="Economy" id="Economy">Economy Cash: 0</p>
+        </div>
+
+        <div class="product1">
+            <img class="product-image" src="https://w7.pngwing.com/pngs/163/1015/png-transparent-camera-emoji-graphy-android-video-camera-electronics-camera-lens-rectangle.png">
+            <center><b><p class="product-title">Image Perms</p></b></center>
+            <div class="container">
+                <p class="Descreption"><b>Descreption:</b> By owning this item, you will be able to send any kind of image and video in our official Discord server's general chat.</p>
+            </div>
+            <p class="price"><b>Price: </b>25,000 Economy Cash</p>
+            <button id="buy-product1">Buy Now</button>
+        </div>
+
+        <div class="product2">
+            <img class="product-image2" src="https://o.remove.bg/downloads/04d51cf3-b1fe-4287-bb24-b0f6838d8a89/Retired_Bugatti_Chiron-removebg-preview.png">
+            <center><b><p class="product-title">Exotic Perms</p></b></center>
+            <div class="container2">
+                <p class="Descreption1"><b>Descreption:</b> By owning this item, you will be able to drive any kind of exotic type vehicke in our in-game server.</p>
+            </div>
+            <p class="price1"><b>Price: </b>125,000 Economy Cash</p>
+            <button id="buy-product2">Buy Now</button>
+        </div>
+
+        <div class="product3">
+            <img class="product-image3" src="https://o.remove.bg/downloads/6b2cd038-24c6-4201-a022-e522dc9ddc4a/image-removebg-preview.png">
+            <center><b><p class="product-title3">All Guns Perms</p></b></center>
+            <div class="container3">
+                <p class="Descreption2"><b>Descreption:</b> By owning this item, you will be able to use every king of guns in our in-game server.</p>
+            </div>
+            <p class="price3"><b>Price: </b>90,500 Economy Cash</p>
+            <button id="buy-product3">Buy Now</button>
+        </div>
+
+        <script>
+            let cash = parseInt(localStorage.getItem('economyCash'))
+            document.getElementById("Economy").textContent = "Economy Cash: " + cash;
+            localStorage.setItem('economyCash', cash);
+
+            document.getElementById("buy-product1").onclick = function buyImageProduct() {
+                if (cash >= 25000) {
+                    alert("Successfully Bought Product: Exotic Perms. Please take a screenshot of it and open ticket in our Discord server to get image permissions.");
+                    cash -= 25000;
+                    console.log(cash);
+                    document.getElementById("Economy").textContent = "Economy Cash: " + cash;
+                    localStorage.setItem("economyCash", cash);
+                } else {
+                    alert("You Don't Have Enough Cash to Buy This Product.");
+                }
+            };
+
+            document.getElementById("buy-product2").onclick = function buyImageProduct() {
+                if (cash >= 125000) {
+                    alert("Successfully Bought Product: Exotic perms. Please take a screenshot of it and open ticket in our Discord server to get exotic permissions.");
+                    cash -= 125000;
+                    console.log(cash);
+                    document.getElementById("Economy").textContent = "Economy Cash: " + cash;
+                    localStorage.setItem("economyCash", cash);
+                } else {
+                    alert("You Don't Have Enough Cash to Buy This Product.");
+                }
+            };
+
+            document.getElementById("buy-product3").onclick = function buyImageProduct() {
+                if (cash >= 90500) {
+                    alert("Successfully Bought Product: All Gun Perms. Please take a screenshot of it and open ticket in our Discord server to get all gun permissions.");
+                    cash -= 90500;
+                    console.log(cash);
+                    document.getElementById("Economy").textContent = "Economy Cash: " + cash;
+                    localStorage.setItem("economyCash", cash);
+                } else {
+                    alert("You Don't Have Enough Cash to Buy This Product.");
+                }
+            };
+        </script>
+</body>
+</html>
